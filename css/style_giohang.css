@@ -173,6 +173,35 @@ section{
 	border-radius: 4px;
 }
 
+.payment {
+	/* display: flex; */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	width: 450px;
+	margin-bottom: 20px;
+	padding: 10px 0 10px 20px;
+	border-radius: 10px;
+  }
+  
+  .payment div {
+	margin-top: 10px;
+  }
+  
+  .payment div:nth-child(1) p {
+	display: inline;
+  }
+  
+  .payment div:nth-child(1) p:nth-child(1) {
+	font-weight: bold;
+  }
+  
+  .payment div:nth-child(1) p:nth-child(2) {
+	color: red;
+  }
+  
+  .payment div:nth-child(2) {
+	font-weight: bold;
+  }
+
 .product input[type='checkbox']{
 	margin: 25px 20px;
 	width: 20px;

@@ -47,14 +47,85 @@
         <h1>Đơn Hàng</h1>
         <!--product list-->
         <div class="filter">
-            <div class="date">
-                <label for="start">Từ ngày: </label>
-                    <input type="date" id="start" name="start" value="2023-11-24" min="2018-01-01" max="2023-12-31">
-                    <label for="start">đến </label>
-                    <input type="date" id="end" name="end" value="2023-11-30" min="2018-01-01" max="2023-12-31">
+            <div class="address">
+                <!-- Lựa chọn thành phố -->
+                <select id="city" name="city" style="
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    background-color: #fff;
+                    color: #333;
+                    appearance: none;
+                    cursor: pointer;
+                    margin-bottom: 0.5rem;
+                ">
+                    <option value="" disabled selected>Chọn thành phố</option>
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="hochiminh">TP. Hồ Chí Minh</option>
+                    <option value="danang">Đà Nẵng</option>
+                    <option value="other">Khác</option>
+                </select>
+            
+                <!-- Lựa chọn quận/huyện -->
+                <select id="district" name="district" style="
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    background-color: #fff;
+                    color: #333;
+                    appearance: none;
+                    cursor: pointer;
+                    margin-bottom: 0.5rem;
+                ">
+                    <option value="" disabled selected>Chọn quận/huyện</option>
+                    <option value="ba-dinh">Ba Đình</option>
+                    <option value="dong-da">Đống Đa</option>
+                    <option value="hai-ba-trung">Hai Bà Trưng</option>
+                    <option value="other">Khác</option>
+                </select>
+            
+                <!-- Lựa chọn phường/xã -->
+                <select id="ward" name="ward" style="
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    background-color: #fff;
+                    color: #333;
+                    appearance: none;
+                    cursor: pointer;
+                    margin-bottom: 0.5rem;
+                ">
+                    <option value="" disabled selected>Chọn phường/xã</option>
+                    <option value="phuong-1">Phường 1</option>
+                    <option value="phuong-2">Phường 2</option>
+                    <option value="phuong-3">Phường 3</option>
+                    <option value="other">Khác</option>
+                </select>
+            
+                <!-- Nhập địa chỉ cụ thể -->
+                <input type="text" id="specific-address" name="specific-address" placeholder="Nhập địa chỉ nhà" style="
+                    width: calc(100% - 1rem);
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    background-color: #fff;
+                    color: #333;
+                    margin-bottom: 0.5rem;
+                ">
             </div>
-            <a href="orderAdmin.html" class="show"></i>Xem</a>
+            
+        <div class="date">
+            <label for="start">Từ ngày: </label>
+                <input type="date" id="start" name="start" value="2023-11-24" min="2018-01-01" max="2023-12-31">
+                <label for="start">đến </label>
+                <input type="date" id="end" name="end" value="2023-11-30" min="2018-01-01" max="2023-12-31">
+                <a href="orderAdmin.html" class="show"></i>Lọc</a>
         </div>
+    </div>
         <table>
             <!--noi dung tieu de-->
             <tr class="title">
@@ -70,21 +141,21 @@
                 <td>Trọng Hiếu</td>
                 <td>123 Nguyễn Thị Minh Khai, Quận 1, TpHCM</td>
                 <td>16.490.000đ</td>
-                <td class="state">Đã nhận</td>
+                <td class="state">Đã xác nhận</td>
             </tr>
             <tr class="product">
                 <td><a href="orderDetail.html">#2</a></td>
                 <td>Nguyễn Ân</td>
                 <td>123 Nguyễn Thị Minh Khai, Quận 1, TpHCM</td>
                 <td>16.490.000đ</td>
-                <td class="state">Đã nhận</td>
+                <td class="state">Chưa xử lý</td>
             </tr>
             <tr class="product">
                 <td><a href="orderDetail.html">#3</a></td>
                 <td>Mr.Thanh</td>
                 <td>123 Nguyễn Thị Minh Khai, Quận 1, TpHCM</td>
                 <td>16.490.000đ</td>
-                <td class="state">Đã nhận</td>
+                <td class="state">Đã xác nhận</td>
             </tr>
         </table>
         <div class="pagination">

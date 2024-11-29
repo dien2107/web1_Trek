@@ -156,9 +156,13 @@ h1{
 	width: 90%;
     padding: 20px;
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
     align-items: center;
     font-size: 16px;
+}
+
+.date {
+	display: flex;
 }
 
 .date input{
