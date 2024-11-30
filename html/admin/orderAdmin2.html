@@ -46,9 +46,10 @@
         <button id="openNav" class="menu-button" onclick="w3_open()">&#9776; Menu</button>
         <h1>Đơn Hàng</h1>
         <!--product list-->
-        <div class="filter">
-            <div class="address">
-                <!-- Lựa chọn thành phố -->
+        <div class="filter" style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+            <!-- Thành phố -->
+            <div style="display: flex; flex-direction: column; flex: 1 1 150px;">
+                <label for="city" style="font-size: 1rem; margin-bottom: 0.25rem;">Thành phố</label>
                 <select id="city" name="city" style="
                     padding: 0.5rem;
                     border: 1px solid #ccc;
@@ -58,16 +59,18 @@
                     color: #333;
                     appearance: none;
                     cursor: pointer;
-                    margin-bottom: 0.5rem;
                 ">
-                    <option value="" disabled selected>Chọn thành phố</option>
+                    <option value="" disabled selected>Chọn</option>
                     <option value="hanoi">Hà Nội</option>
                     <option value="hochiminh">TP. Hồ Chí Minh</option>
                     <option value="danang">Đà Nẵng</option>
                     <option value="other">Khác</option>
                 </select>
-            
-                <!-- Lựa chọn quận/huyện -->
+            </div>
+        
+            <!-- Quận/huyện -->
+            <div style="display: flex; flex-direction: column; flex: 1 1 150px;">
+                <label for="district" style="font-size: 1rem; margin-bottom: 0.25rem;">Quận/Huyện</label>
                 <select id="district" name="district" style="
                     padding: 0.5rem;
                     border: 1px solid #ccc;
@@ -77,17 +80,53 @@
                     color: #333;
                     appearance: none;
                     cursor: pointer;
-                    margin-bottom: 0.5rem;
                 ">
-                    <option value="" disabled selected>Chọn quận/huyện</option>
+                    <option value="" disabled selected>Chọn</option>
                     <option value="ba-dinh">Ba Đình</option>
                     <option value="dong-da">Đống Đa</option>
                     <option value="hai-ba-trung">Hai Bà Trưng</option>
                     <option value="other">Khác</option>
                 </select>
-            
-                <!-- Lựa chọn phường/xã -->
-                <select id="ward" name="ward" style="
+            </div>
+        
+            <!-- Địa chỉ cụ thể -->
+            <div style="display: flex; flex-direction: column; flex: 2 1 250px;">
+                <label for="specific-address" style="font-size: 1rem; margin-bottom: 0.25rem;">Địa chỉ cụ thể</label>
+                <input type="text" id="specific-address" name="specific-address" placeholder="Nhập địa chỉ" style="
+                    width: 100%;
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                    background-color: #fff;
+                    color: #333;
+                ">
+            </div>
+        
+            <!-- Thời gian -->
+            <div style="display: flex; flex-direction: row; align-items: center; gap: 0.5rem; flex: 2 1 250px;">
+                <label for="start" style="font-size: 1rem;">Từ:</label>
+                <input type="date" id="start" name="start" value="2023-11-24" min="2018-01-01" max="2023-12-31" style="
+                    flex: 1;
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                ">
+                <label for="end" style="font-size: 1rem;">đến</label>
+                <input type="date" id="end" name="end" value="2023-11-30" min="2018-01-01" max="2023-12-31" style="
+                    flex: 1;
+                    padding: 0.5rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 1rem;
+                ">
+            </div>
+        
+            <!-- Trạng thái -->
+            <div style="display: flex; flex-direction: column; flex: 1 1 150px;">
+                <!-- <label for="status" style="font-size: 1rem; margin-bottom: 0.25rem;">Trạng thái</label> -->
+                <select id="status" name="status" style="
                     padding: 0.5rem;
                     border: 1px solid #ccc;
                     border-radius: 4px;
@@ -96,36 +135,31 @@
                     color: #333;
                     appearance: none;
                     cursor: pointer;
-                    margin-bottom: 0.5rem;
                 ">
-                    <option value="" disabled selected>Chọn phường/xã</option>
-                    <option value="phuong-1">Phường 1</option>
-                    <option value="phuong-2">Phường 2</option>
-                    <option value="phuong-3">Phường 3</option>
-                    <option value="other">Khác</option>
+                    <option value="" disabled selected>Trạng thái</option>
+                    <option value="pending">Đang xử lý</option>
+                    <option value="shipped">Đã giao</option>
+                    <option value="completed">Hoàn tất</option>
+                    <option value="cancelled">Đã hủy</option>
                 </select>
-            
-                <!-- Nhập địa chỉ cụ thể -->
-                <input type="text" id="specific-address" name="specific-address" placeholder="Nhập địa chỉ nhà" style="
-                    width: calc(100% - 1rem);
-                    padding: 0.5rem;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    font-size: 1rem;
-                    background-color: #fff;
-                    color: #333;
-                    margin-bottom: 0.5rem;
-                ">
             </div>
-            
-        <div class="date">
-            <label for="start">Từ ngày: </label>
-                <input type="date" id="start" name="start" value="2023-11-24" min="2018-01-01" max="2023-12-31">
-                <label for="start">đến </label>
-                <input type="date" id="end" name="end" value="2023-11-30" min="2018-01-01" max="2023-12-31">
-                <a href="orderAdmin.html" class="show"></i>Lọc</a>
-        </div>
-    </div>
+        
+            <!-- Nút Lọc -->
+            <div style="display: flex; flex-direction: column; flex: 1 1 150px; align-items: center;">
+                <a href="orderAdmin.html" class="show" style="
+                    display: inline-block;
+                    padding: 0.5rem 1rem;
+                    background-color: #007bff;
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    border-radius: 4px;
+                    text-align: center;
+                    cursor: pointer;
+                ">Lọc</a>
+            </div>
+        </div>  
         <table>
             <!--noi dung tieu de-->
             <tr class="title">

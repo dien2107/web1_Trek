@@ -70,7 +70,27 @@
 								<i class="fa-regular fa-star"></i>	
 							</div>
 							<div>Giá tại: TP.HCM</div>
-							<input style="margin: 1rem 0 1rem 0; font-size: 2rem;" type="number" name="" id="" value="1">
+							<div style="display: flex; align-items: center; gap: 0.5rem;">
+								<!-- Nút giảm -->
+								<button 
+									onclick="decrementValue()" 
+									style="display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; font-size: 1.5rem; font-weight: bold; border: 1px solid #ccc; border-radius: 0.5rem; background-color: #f5f5f5; cursor: pointer;">
+									-
+								</button>
+								<!-- Ô input -->
+								<input 
+									id="quantity" 
+									type="number" 
+									value="1" 
+									style="margin: 1rem 0; font-size: 2rem; text-align: center; width: 5rem; height: 3rem; border: 1px solid #ccc; border-radius: 0.5rem;">
+								<!-- Nút tăng -->
+								<button 
+									onclick="incrementValue()" 
+									style="display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; font-size: 1.5rem; font-weight: bold; border: 1px solid #ccc; border-radius: 0.5rem; background-color: #f5f5f5; cursor: pointer;">
+									+
+								</button>
+							</div>
+							
 							<hr></hr>
 							<div class="price">18.990.000đ</div>
 							<a onclick="remind()"><button>THÊM VÀO GIỎ HÀNG</button></a>
@@ -89,6 +109,20 @@
 			function remind(){
 				alert('Bạn chưa đăng nhập !!!');
 			}
+			function incrementValue() {
+        const input = document.getElementById("quantity");
+        const currentValue = parseInt(input.value) || 0;
+        input.value = currentValue + 1;
+    }
+
+    // Giảm giá trị
+    function decrementValue() {
+        const input = document.getElementById("quantity");
+        const currentValue = parseInt(input.value) || 0;
+        if (currentValue > 0) {
+            input.value = currentValue - 1;
+        }
+    }
 		</script>
 	</body>
 </html>

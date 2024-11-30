@@ -103,13 +103,29 @@
                         <label for="product_quantity">Thanh toán</label>
                         <input type="text" value="Thanh toán khi nhận hàng" disabled>
                     </div>
+                    <div class="info">
+                        <label for="purchase_date">Ngày mua</label>
+                        <input type="text" value="24/11/2023" disabled>
+                    </div>
                     <div class="option">
                         <label for="product_quantity">Trạng thái</label>
-                        <label for="option1">Chưa xử lý</label>
-                        <input type="radio" id="option" name="option" value="chuaXuLy" disabled>
-                        <label for="option2">Đã xử lý</label>
-                        <input type="radio" id="option" name="option" value="daXuLy" checked>
+                        <select id="option" name="option" style="
+                            padding: 0.5rem;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            font-size: 1rem;
+                            background-color: #fff;
+                            color: #333;
+                            appearance: none;
+                            cursor: pointer;
+                        ">
+                            <option value="chuaXuLy" selected>Chưa xử lý</option>
+                            <option value="daXacnhan">Đã xác nhận</option>
+                            <option value="daGiaoThanhCong">Đã giao thành công</option>
+                            <option value="daHuy">Đã hủy</option>
+                        </select>
                     </div>
+                    
                     
                     <div class="buttons">
                         <a href="thongKeAdmin2.html"><i class="fa-solid fa-x"></i>Đóng</a>
